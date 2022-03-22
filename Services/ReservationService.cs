@@ -7,6 +7,9 @@ namespace CodeWarsReservationBackend.Services
 {
     public class ReservationService
     {
-        
+        public IEnumerable<ReservationModel> GetReservedKataByCodeWarName(string codeWarName)
+        {
+            return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);
+        }
     }
 }
