@@ -20,7 +20,7 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpPost("AddCohort")]
-            public bool AddCohort(CohortModel newCohort)
+         public bool AddCohort(CohortModel newCohort)
         {
             return _data.AddCohort(newCohort);
         }
@@ -37,7 +37,7 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.ArchiveCohort(CohortArchive);
         }
 
-        [HttpGet("GetCohortByCohortName/{CohortName}")]
+        [HttpGet("GetCohortByCohortName/{cohortName}")]
         public IEnumerable<CohortModel> GetCohortByCohortName(string cohortName)
         {
             return _data.GetCohortByCohortName(cohortName);
@@ -49,10 +49,10 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.GetAllArchivedCohorts();
         }
 
-        [HttpGet("GetCohortById/{CohortId}")]
-        public CohortModel GetCohortById(int CohortId)
+        [HttpGet("GetCohortById/{cohortId}")]
+        public CohortModel GetCohortById(int cohortId)
         {
-            return _data.GetCohortById(CohortId);
+            return _data.GetCohortById(cohortId);
         }
     }
 }
