@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeWarsReservationBackend.Models;
 using CodeWarsReservationBackend.Services.Context;
 
 namespace CodeWarsReservationBackend.Services
@@ -13,6 +14,14 @@ namespace CodeWarsReservationBackend.Services
         {
             _context = context;
         }
+
+        public IEnumerable<CompletedKatasModel> GetAllCompletedKatas()
+        {
+            return _context.CompletedKatasInfo;
+        }
+
+        
+
 
     }
 }
