@@ -8,9 +8,9 @@ namespace CodeWarsReservationBackend.Services
     public class CompletedKatasService
     {
         private readonly DataContext _context;
-        public CompletedKatasService(DataContext context)
+        public CompletedKatasService(DataContext Context)
         {
-            _context = context;
+            _context = Context;
         }
 
         
