@@ -18,5 +18,19 @@ namespace CodeWarsReservationBackend.Controllers
         {
             _data = _dataFromService;
         }
+
+        [HttpGet("GetAllCompletedKatas")]
+        public IEnumerable<CompletedKatasModel>GetAllCompletedKatas()
+        {
+            return _data.GetAllCompletedKatas();
+        }
+
+        [HttpGet("GetCompletedKatasByCodeWarName/{codewarName}")]
+        public IEnumerable<CompletedKatasModel> GetCompletedKatasByCodeWarName(string codewarName)
+        {
+            return _data.GetByCompletedKatas(codewarName);
+        }
+
+
     }
 }
