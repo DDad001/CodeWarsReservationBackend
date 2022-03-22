@@ -28,7 +28,7 @@ namespace CodeWarsReservationBackend.Controllers
         [HttpGet("GetCompletedKatasByCodeWarName/{codewarName}")]
         public IEnumerable<CompletedKatasModel> GetCompletedKatasByCodeWarName(string codewarName)
         {
-            return _data.GetByCompletedKatas(codewarName);
+            return _data.GetCompletedKatasByCodeWarName(codewarName);
         }
 
 
