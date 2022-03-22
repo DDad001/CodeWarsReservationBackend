@@ -14,7 +14,5 @@ namespace CodeWarsReservationBackend.Services
             _context = Context;
         }
 
-        
-
     }
 }
