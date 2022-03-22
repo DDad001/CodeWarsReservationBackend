@@ -7,6 +7,11 @@ namespace CodeWarsReservationBackend.Services
 {
     public class CompletedKatasService
     {
-        
+        private readonly DataContext _context;
+        public CompletedKatasService(DataContext context)
+        {
+            _context = context;
+        }
+
     }
 }
