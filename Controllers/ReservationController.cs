@@ -12,7 +12,7 @@ namespace CodeWarsReservationBackend.Controllers
     public class ReservationController : ControllerBase
     {
     
-        [HttpGet("GetReservedKataByCodeWarName/{CodeWarName}")]
+        [HttpGet("GetReservedKataByCodeWarName/{codeWarName}")]
         public IEnumerable<ReservationModel> GetReservedKataByCodeWarName(string codeWarName)
         {
             return _data.GetReservedKataByCodeWarName(codeWarName);
