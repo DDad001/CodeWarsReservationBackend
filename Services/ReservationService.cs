@@ -19,7 +19,8 @@ namespace CodeWarsReservationBackend.Services
         public IEnumerable<ReservationModel> GetAllReservedKatas()
         {
             return _context.ReservationInfo;
-            
+
+        }
         public IEnumerable<ReservationModel> GetReservedKataByCodeWarName(string codeWarName)
         {
             return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);

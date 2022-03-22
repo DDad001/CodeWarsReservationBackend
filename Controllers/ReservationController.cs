@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CodeWarsReservationBackend.Models;
+using CodeWarsReservationBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeWarsReservationBackend.Controllers
@@ -11,6 +12,13 @@ namespace CodeWarsReservationBackend.Controllers
     [Route("[controller]")]
     public class ReservationController : ControllerBase
     {
+        
+        private readonly ReservationService _data;
+
+        public ReservationController (ReservationService _dataFromService)
+        {
+            _data = _dataFromService;
+        }
     
         [HttpGet("GetReservedKataByCodeWarName/{codeWarName}")]
         public IEnumerable<ReservationModel> GetReservedKataByCodeWarName(string codeWarName)
