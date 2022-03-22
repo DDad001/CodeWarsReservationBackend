@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CodeWarsReservationBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ReservationController : ControllerBase
     {
         
