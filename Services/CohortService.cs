@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodeWarsReservationBackend.Models;
 using CodeWarsReservationBackend.Services.Context;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodeWarsReservationBackend.Services
 {
@@ -22,6 +23,7 @@ namespace CodeWarsReservationBackend.Services
             return _context.SaveChanges() != 0;
         }
 
+
         public IEnumerable<ProjectItemModel> GetAllProjectItems()
         {
             return _context.ProjectItemInfo;
@@ -38,9 +40,9 @@ namespace CodeWarsReservationBackend.Services
         }
 
 
-        public IEnumerable<ProjectItemModel> GetProjectItemByTitle(string title)
+        public IEnumerable<CohortService> GetCohortByCohortName(string cohortName)
         {
-            return _context.ProjectItemInfo.Where(item => item.Title == title);
+            return _context.CohortInfo.Where(item => item.CohortName == cohortName);
         }
 
         public IEnumerable<ProjectItemModel> GetProjectItemByDescription(string description)
