@@ -31,10 +31,10 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.UpdateCohort(CohortUpdate);
         }
 
-        [HttpPost("DeleteCohort")]
-        public bool DeleteCohort(CohortModel CohortDelete)
+        [HttpPost("ArchiveCohort")]
+        public bool DeleteCohort(CohortModel CohortArchive)
         {
-            return _data.DeleteCohort(CohortDelete);
+            return _data.ArchiveCohort(CohortArchive);
         }
 
         [HttpGet("GetCohortByTitle/{Title}")]
