@@ -32,7 +32,7 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpPost("ArchiveCohort")]
-        public bool DeleteCohort(CohortModel CohortArchive)
+        public bool ArchiveCohort(CohortModel CohortArchive)
         {
             return _data.ArchiveCohort(CohortArchive);
         }
