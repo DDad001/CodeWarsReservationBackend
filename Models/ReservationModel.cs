@@ -7,6 +7,17 @@ namespace CodeWarsReservationBackend.Models
 {
     public class ReservationModel
     {
-        
+        public int Id { get; set; }
+        public int CohortId { get; set; }
+        public string? CodewarName { get; set; }
+        public string? KataName { get; set; }
+        public string? KataSlug { get; set; }
+        public string? KataLink { get; set; }
+        public string? KataLanguage { get; set; }
+        public bool IsCompleted { get; set; }
+        public bool IsDeleted { get; set; }
+
+        public ReservationModel(){}
+
     }
 }

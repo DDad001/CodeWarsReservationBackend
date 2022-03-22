@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeWarsReservationBackend.Models;
 using CodeWarsReservationBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +20,6 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpPost("AddCohort")]
-
             public bool AddCohort(CohortModel newCohort)
         {
             return _data.AddCohort(newCohort);
@@ -30,5 +30,7 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.UpdateCohort(CohortUpdate);
         }
+
+        [HttpGet("")]
     }
 }
