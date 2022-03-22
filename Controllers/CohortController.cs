@@ -18,10 +18,16 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpPost("AddCohort")]
-        
+
             public bool AddCohort(CohortModel newCohort)
         {
             return _data.AddCohort(newCohort);
+        }
+
+        [HttpPost("UpdateCohort")]
+        public bool UpdateCohort(CohortModel CohortUpdate)
+        {
+            return _data.UpdateCohort(CohortUpdate);
         }
     }
 }
