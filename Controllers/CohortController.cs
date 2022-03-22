@@ -7,9 +7,27 @@ using Microsoft.AspNetCore.Mvc;
 namespace CodeWarsReservationBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CohortController : ControllerBase
     {
-        
+        private readonly CohortService _data;
+
+        public CohortController(CohortService _dataFromService)
+        {
+            _data = _dataFromService;
+        }
+
+        [HttpPost("AddCohort")]
+
+            public bool AddCohort(CohortModel newCohort)
+        {
+            return _data.AddCohort(newCohort);
+        }
+
+        [HttpPost("UpdateCohort")]
+        public bool UpdateCohort(CohortModel CohortUpdate)
+        {
+            return _data.UpdateCohort(CohortUpdate);
+        }
     }
 }
