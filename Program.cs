@@ -1,6 +1,32 @@
+using CodeWarsReservationBackend.Services;
+using CodeWarsReservationBackend.Services.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<CohortService>();
+builder.Services.AddScoped<ReservationService>();
+builder.Services.AddScoped<CompletedKatasService>();
+
+
+var connectionString = builder.Configuration.GetConnectionString("CodeWarsString");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(connectionString));
+
+// Adding CORS POLICY HERE
+builder.Services.AddCors(options => {
+    options.AddPolicy("CodeWarsPolicy",
+    builder => {
+        builder.WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+    });
+});
+
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -16,7 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseCors("CodeWarsPolicy");
 
 app.UseAuthorization();
 
