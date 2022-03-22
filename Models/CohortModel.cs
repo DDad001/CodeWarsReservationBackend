@@ -10,5 +10,6 @@ namespace CodeWarsReservationBackend.Models
         public int CohortId { get; set; }
         public string? CohortName { get; set; }
         public string? CohortLevelOfDifficulty { get; set; }
+        public CohortModel(){}
     }
 }
