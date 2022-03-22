@@ -9,7 +9,7 @@ namespace CodeWarsReservationBackend.Models
     {
         public int Id { get; set; }
         public int CohortId { get; set; }
-        public string? CodewarName { get; set; }
+        public string? CodeWarName { get; set; }
         public string? KataName { get; set; }
         public string? KataSlug { get; set; }
         public string? KataLink { get; set; }

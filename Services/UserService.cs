@@ -27,14 +27,14 @@ namespace CodeWarsReservationBackend.Services
             return _context.UserInfo;
         }
 
-        public bool DoesUserExist(string? username) 
+        public bool DoesUserExist(string? codeWarName) 
         {
-            return _context.UserInfo.SingleOrDefault( user => user.Username == username) != null;
+            return _context.UserInfo.SingleOrDefault( user => user.CodeWarName == codeWarName) != null;
         }
 
-        public UserModel GetUserByUsername(string username)
+        public UserModel GetUserByUsername(string codeWarName)
         {
-            return _context.UserInfo.SingleOrDefault( user => user.Username == username);
+            return _context.UserInfo.SingleOrDefault( user => user.CodeWarName == codeWarName);
         }
 
         public UserModel GetUserById(int id)
@@ -42,12 +42,12 @@ namespace CodeWarsReservationBackend.Services
             return _context.UserInfo.SingleOrDefault(user => user.Id == id);
         }
 
-        public UserIdDTO GetUserIdDTOByUsername(string username)
+        public UserIdDTO GetUserIdDTOByUsername(string codeWarName)
         {
             var UserInfo = new UserIdDTO();
-            var foundUser = _context.UserInfo.SingleOrDefault(user => user.Username == username);
+            var foundUser = _context.UserInfo.SingleOrDefault(user => user.CodeWarName == codeWarName);
             UserInfo.UserId = foundUser.Id;
-            UserInfo.Username = foundUser.Username;
+            UserInfo.Username = foundUser.CodeWarName;
             return UserInfo;
         }
 
@@ -79,12 +79,12 @@ namespace CodeWarsReservationBackend.Services
         public bool AddUser(CreateAccountDTO UserToAdd) 
         {
             bool result = false;
-            if (!DoesUserExist(UserToAdd.Username)) {
+            if (!DoesUserExist(UserToAdd.CodeWarName)) {
                 // The user does exist
                 UserModel newUser = new UserModel();
                 var hashedPassword = HashPassword(UserToAdd.Password);
                 newUser.Id = UserToAdd.Id;
-                newUser.Username = UserToAdd.Username;
+                newUser.CodeWarName = UserToAdd.CodeWarName;
                 newUser.Salt = hashedPassword.Salt;
                 newUser.Hash = hashedPassword.Hash;
 
@@ -126,37 +126,37 @@ namespace CodeWarsReservationBackend.Services
         }
 
 
-        public bool UpdateUsername(string Username)
+        public bool UpdateUsername(string CodeWarName)
         {
-            UserModel foundUser = GetUserByUsername(Username);
+            UserModel foundUser = GetUserByUsername(CodeWarName);
             bool result = false;
             if(foundUser != null)
             {
-                foundUser.Username = Username;
+                foundUser.CodeWarName = CodeWarName;
                 _context.Update<UserModel>(foundUser);
                result =  _context.SaveChanges() != 0;
             }
             return result;
         }
 
-        public bool DeleteUser(string Username)
+        public bool DeleteUser(string CodeWarName)
         {
-            UserModel foundUser = GetUserByUsername(Username);
+            UserModel foundUser = GetUserByUsername(CodeWarName);
             bool result = false;
             if(foundUser != null)
             {
-                foundUser.Username = Username;
+                foundUser.CodeWarName = CodeWarName;
                 _context.Remove<UserModel>(foundUser);
                result =  _context.SaveChanges() != 0;
             }
             return result;
         }
 
-        public bool UpdateUserRole(string username, bool IsAdmin)
+        public bool UpdateUserRole(string codeWarName, bool IsAdmin)
         {
-            UserModel foundUser = GetUserByUsername(username);
+            UserModel foundUser = GetUserByUsername(codeWarName);
 
-            foundUser.Username = username;
+            foundUser.CodeWarName = codeWarName;
             foundUser.IsAdmin = IsAdmin;
             
             _context.Update<UserModel>(foundUser);

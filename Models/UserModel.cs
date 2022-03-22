@@ -8,7 +8,8 @@ namespace CodeWarsReservationBackend.Models
     public class UserModel
     {
         public int Id { get; set; }
-        public string? Username { get; set; }
+        public string? CohortName { get; set; }
+        public string? CodeWarName { get; set; }
         public string? Salt { get; set; }
         public string? Hash { get; set; }
         public bool IsAdmin { get; set; }

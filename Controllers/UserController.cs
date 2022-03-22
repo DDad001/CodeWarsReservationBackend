@@ -38,9 +38,9 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpPost("UpdateUser/{username}")]
-        public bool UpdateUser(string username)
+        public bool UpdateUser(string codeWarName)
         {
-            return _data.UpdateUsername(username);
+            return _data.UpdateUsername(codeWarName);
         }
 
         [HttpPost("DeleteUser/{userToDelete}")]
@@ -56,18 +56,9 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpGet("GetUserByUsername/{username}")]
-        public UserModel GetUserByUsername(string username)
+        public UserModel GetUserByUsername(string codeWarName)
         {
-            return _data.GetUserByUsername(username);
+            return _data.GetUserByUsername(codeWarName);
         }
-
-    
-        // [HttpGet("GetUserByCohortName/{cohortName}")]
-        // public IEnumerable<UserModel> GetUserByCohortName(string cohortName) 
-        // {
-        //     return _data.GetUserByCohortName(cohort);
-        // }
-
-
     }
 }
