@@ -25,5 +25,11 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);
         }
+         public bool UpdateReservedKata(ReservationModel updatedReservedKata)
+        {
+            _context.Update<ReservationModel>(updatedReservedKata);
+            return _context.SaveChanges() != 0;
+        }
+
     }
 }
