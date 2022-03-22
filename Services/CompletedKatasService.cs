@@ -15,6 +15,11 @@ namespace CodeWarsReservationBackend.Services
         }
 
         
+        public IEnumerable<CompletedKatasModel> GetCompletedKatasByCodeWarName(string codewarName)
+        {
+            return _context.CompletedKatasInfo.Where(item => item.CodeWarName == codewarName);
+        }
+        
 
     }
 }
