@@ -1,0 +1,7 @@
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.csproj.AssemblyReference.cache
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.AssemblyInfoInputs.cache
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.AssemblyInfo.cs
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.csproj.CoreCompileInputs.cache
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.MvcApplicationPartsAssemblyInfo.cs
+/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.MvcApplicationPartsAssemblyInfo.cache

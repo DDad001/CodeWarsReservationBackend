@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeWarsReservationBackend.Models;
+using CodeWarsReservationBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeWarsReservationBackend.Controllers
-//Get all completed katas
-//GetCompletedkatabycodewarname
 {
     [ApiController]
     [Route("[controller]")]
