@@ -31,6 +31,17 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.UpdateCohort(CohortUpdate);
         }
 
-        [HttpGet("")]
+        [HttpPost("DeleteCohort")]
+        public bool DeleteCohort(CohortModel CohortDelete)
+        {
+            return _data.DeleteCohort(CohortDelete);
+        }
+
+        [HttpGet("GetCohortByTitle/{Title}")]
+        public IEnumerable<CohortModel> GetCohortByTitle(string title)
+        {
+            return _data.GetCohortByTitle(title);
+        }
+        
     }
 }
