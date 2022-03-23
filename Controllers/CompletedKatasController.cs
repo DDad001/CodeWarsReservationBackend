@@ -20,7 +20,7 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpGet("GetAllCompletedKatas")]
-        public IEnumerable<CompletedKatasModel>GetAllCompletedKatas()
+        public IEnumerable<CompletedKatasModel> GetAllCompletedKatas()
         {
             return _data.GetAllCompletedKatas();
         }
