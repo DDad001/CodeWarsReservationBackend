@@ -180,5 +180,11 @@ namespace CodeWarsReservationBackend.Services
             }
             return result;
         }
+
+         public IEnumerable<CohortModel> GetAllUsersByCohortName(string cohortName)
+        {
+            return _context.CohortInfo.Where(item => item.CohortName == cohortName);
+        }
+
     }
 }

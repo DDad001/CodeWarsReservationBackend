@@ -62,11 +62,6 @@ namespace CodeWarsReservationBackend.Services
         //     return _context.SaveChanges() !=0;
         // }
 
-        public IEnumerable<CohortModel> GetAllUsersByCohortName(string cohortName)
-        {
-            return _context.CohortInfo.Where(item => item.CohortName == cohortName);
-        }
-
         
     }
 }
