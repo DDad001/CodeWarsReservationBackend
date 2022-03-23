@@ -43,6 +43,14 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.GetCohortByCohortName(cohortName);
         }
+
+        
+        
+        [HttpGet("GetCohortByCodeWarName/{codeWarName}")]
+        public CohortModel GetCohortByCodeWarName(string codeWarName)
+        {
+            return _data.GetCohortByCodeWarName(codeWarName);
+        }
         
         // [HttpGet("GetAllArchivedCohorts")]
         // public IEnumerable<CohortModel> GetAllArchivedCohorts()
@@ -55,5 +63,6 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.GetCohortById(id);
         }
+
     }
 }

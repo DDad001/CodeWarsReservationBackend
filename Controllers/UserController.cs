@@ -73,5 +73,11 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.GetUserById(id);
         }
+
+        [HttpGet("GetAllUsersByCohortName/{cohortName}")]
+        public IEnumerable<UserModel> GetAllUsersByCohortName(string cohortName)
+        {
+            return _data.GetAllUsersByCohortName(cohortName);
+        }
     }
 }
