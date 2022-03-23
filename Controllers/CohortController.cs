@@ -43,6 +43,8 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.GetCohortByCohortName(cohortName);
         }
+
+        
         
         [HttpGet("GetCohortByCodeWarName/{codeWarName}")]
         public CohortModel GetCohortByCodeWarName(string codeWarName)
