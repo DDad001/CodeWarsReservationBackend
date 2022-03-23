@@ -2063,11 +2063,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
+      "projectUniqueName": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
       "projectName": "CodeWarsReservationBackend",
-      "projectPath": "/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
+      "projectPath": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
       "packagesPath": "/Users/daniald/.nuget/packages/",
-      "outputPath": "/Users/daniald/Level-3 CodeStack/CodeWarsReservationBackend/obj/",
+      "outputPath": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/daniald/.nuget/NuGet/NuGet.Config"
