@@ -16,6 +16,12 @@ namespace CodeWarsReservationBackend.Services
         {
             _context = context;
         }
+
+        public bool AddReserveredKata(ReservationModel newReservedKata)
+        {
+            _context.Add(newReservedKata);
+            return _context.SaveChanges() != 0;
+        }
         public IEnumerable<ReservationModel> GetAllReservedKatas()
         {
             return _context.ReservationInfo;
