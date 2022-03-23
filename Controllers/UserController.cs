@@ -31,17 +31,17 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         //this endpoint really does not work-- ask for help tommorow
-        [HttpPost("UpdateUser")]
-        public bool UpdateUser(UserModel userToUpdate)
-        {
-            return _data.UpdateUser(userToUpdate);
-        }
+        // [HttpPost("UpdateUser")]
+        // public bool UpdateUser(UserModel userToUpdate)
+        // {
+        //     return _data.UpdateUser(userToUpdate);
+        // }
 
-        //this endpoint really does not work-- ask for help tommorow
-        [HttpPost("UpdateUsername/{id}/{codeWarName}")]
-        public bool UpdateUsername(int id, string codeWarName)
+
+        [HttpPost("UpdateUsername/{id}/{codeWarName}/{cohortName}/{isAdmin}/{isDeleted}")]
+        public bool UpdateUsername(int id, string codeWarName, string cohortName, bool isAdmin, bool isDeleted)
         {
-            return _data.UpdateUsername(id, codeWarName);
+            return _data.UpdateUsername(id, codeWarName, cohortName, isAdmin, isDeleted);
         }
 
         [HttpPost("GiveUserAdmin/{id}")]

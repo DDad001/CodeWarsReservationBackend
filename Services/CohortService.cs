@@ -51,12 +51,12 @@ namespace CodeWarsReservationBackend.Services
             return _context.SaveChanges() != 0;
         }
 
-         public bool ArchiveCohort (CohortModel CohortArchived)
-        {
-            CohortArchived.IsArchived = true;
-            _context.Update<CohortModel>(CohortArchived);
-            return _context.SaveChanges() !=0;
-        }
+        //  public bool ArchiveCohort (CohortModel CohortArchived)
+        // {
+        //     CohortArchived.IsArchived = true;
+        //     _context.Update<CohortModel>(CohortArchived);
+        //     return _context.SaveChanges() !=0;
+        // }
 
         
     }

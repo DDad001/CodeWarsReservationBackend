@@ -118,21 +118,25 @@ namespace CodeWarsReservationBackend.Services
             return newHash == storedHash;
         }
         
-        public bool UpdateUser(UserModel userToUpdate)
-        {
-            //This one is sending over the whole object to be updated
-            _context.Update<UserModel>(userToUpdate);
-            return _context.SaveChanges() !=0; 
-        }
+        // public bool UpdateUser(UserModel userToUpdate)
+        // {
+        //     //This one is sending over the whole object to be updated
+        //     _context.Update<UserModel>(userToUpdate);
+        //     return _context.SaveChanges() !=0; 
+        // }
 
 
-        public bool UpdateUsername(int id, string codeWarName)
+        public bool UpdateUsername(int id, string codeWarName, string cohortName, bool isAdmin, bool isDeleted)
         {
             UserModel foundUser = GetUserById(id);
             bool result = false;
             if(foundUser != null)
             {
                 foundUser.CodeWarName = codeWarName;
+                foundUser.IsAdmin = isAdmin;
+                foundUser.CohortName = cohortName;
+                foundUser.IsDeleted = isDeleted;
+
                 _context.Update<UserModel>(foundUser);
                result =  _context.SaveChanges() != 0;
             }

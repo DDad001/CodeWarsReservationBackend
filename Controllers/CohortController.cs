@@ -25,7 +25,6 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.AddCohort(newCohort);
         }
         
-        //not sure if it works
         [HttpPost("UpdateCohort")]
         public bool UpdateCohort(CohortModel CohortUpdate)
         {
@@ -33,13 +32,12 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         // side thing if we have time 
-        [HttpPost("ArchiveCohort")]
-        public bool ArchiveCohort(CohortModel CohortArchive)
-        {
-            return _data.ArchiveCohort(CohortArchive);
-        }
+        // [HttpPost("ArchiveCohort")]
+        // public bool ArchiveCohort(CohortModel CohortArchive)
+        // {
+        //     return _data.ArchiveCohort(CohortArchive);
+        // }
 
-        //works with spaces ex: season 4 ask angel about this
         [HttpGet("GetCohortByCohortName/{cohortName}")]
         public IEnumerable<CohortModel> GetCohortByCohortName(string cohortName)
         {
