@@ -30,23 +30,30 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.Login(User);
         }
 
-        //Update User Account
+        //this endpoint really does not work-- ask for help tommorow
         [HttpPost("UpdateUser")]
         public bool UpdateUser(UserModel userToUpdate)
         {
             return _data.UpdateUser(userToUpdate);
         }
 
-        [HttpPost("UpdateUser/{username}")]
-        public bool UpdateUser(string codeWarName)
+        //this endpoint really does not work-- ask for help tommorow
+        [HttpPost("UpdateUsername/{id}/{codeWarName}")]
+        public bool UpdateUsername(int id, string codeWarName)
         {
-            return _data.UpdateUsername(codeWarName);
+            return _data.UpdateUsername(id, codeWarName);
         }
 
-        [HttpPost("DeleteUser/{userToDelete}")]
-        public bool DeleteUser(string? userToDelete)
+        [HttpPost("GiveUserAdmin/{id}")]
+        public bool GiveUserAdmin(int id)
         {
-            return _data.DeleteUser(userToDelete);
+            return _data.GiveUserAdmin(id);
+        }
+
+        [HttpPost("DeleteUser/{id}")]
+        public bool DeleteUser(int id)
+        {
+            return _data.DeleteUser(id);
         }
 
         [HttpGet("GetAllUsers")]
@@ -55,10 +62,16 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.GetAllUsers();
         }
 
-        [HttpGet("GetUserByUsername/{username}")]
+       [HttpGet("GetUserByUsername/{codeWarName}")]
         public UserModel GetUserByUsername(string codeWarName)
         {
             return _data.GetUserByUsername(codeWarName);
+        }
+
+        [HttpGet("GetUserById/{id}")]
+        public UserModel GetUserById(int id)
+        {
+            return _data.GetUserById(id);
         }
     }
 }

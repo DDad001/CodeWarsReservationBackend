@@ -30,7 +30,6 @@ namespace CodeWarsReservationBackend.Controllers
         {
             return _data.GetCompletedKatasByCodeWarName(codewarName);
         }
-
-
+        
     }
 }

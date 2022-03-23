@@ -47,7 +47,7 @@ namespace CodeWarsReservationBackend.Services
             var UserInfo = new UserIdDTO();
             var foundUser = _context.UserInfo.SingleOrDefault(user => user.CodeWarName == codeWarName);
             UserInfo.UserId = foundUser.Id;
-            UserInfo.Username = foundUser.CodeWarName;
+            UserInfo.CodeWarName = foundUser.CodeWarName;
             return UserInfo;
         }
 
@@ -55,9 +55,9 @@ namespace CodeWarsReservationBackend.Services
         {
             IActionResult Result = Unauthorized();
             // Check to see if the user exist
-            if (DoesUserExist(user.Username)) {
+            if (DoesUserExist(user.CodeWarName)) {
                 // true
-                var foundUser = GetUserByUsername(user.Username);
+                var foundUser = GetUserByUsername(user.CodeWarName);
                 // Check to see if the password is correct
                 if (VerifyUserPassword(user.Password, foundUser.Hash, foundUser.Salt)) {
                     var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DayClassSuperDuperSecretKey@209"));
@@ -126,27 +126,28 @@ namespace CodeWarsReservationBackend.Services
         }
 
 
-        public bool UpdateUsername(string CodeWarName)
+        public bool UpdateUsername(int id, string codeWarName)
         {
-            UserModel foundUser = GetUserByUsername(CodeWarName);
+            UserModel foundUser = GetUserById(id);
             bool result = false;
             if(foundUser != null)
             {
-                foundUser.CodeWarName = CodeWarName;
+                foundUser.CodeWarName = codeWarName;
                 _context.Update<UserModel>(foundUser);
                result =  _context.SaveChanges() != 0;
             }
             return result;
         }
 
-        public bool DeleteUser(string CodeWarName)
+        public bool DeleteUser(int id)
         {
-            UserModel foundUser = GetUserByUsername(CodeWarName);
             bool result = false;
+            UserModel foundUser = GetUserById(id);
             if(foundUser != null)
             {
-                foundUser.CodeWarName = CodeWarName;
-                _context.Remove<UserModel>(foundUser);
+                //if you want to hard delete instead of update do Remove
+                foundUser.IsDeleted = !foundUser.IsDeleted;
+                _context.Update<UserModel>(foundUser);
                result =  _context.SaveChanges() != 0;
             }
             return result;
@@ -161,6 +162,19 @@ namespace CodeWarsReservationBackend.Services
             
             _context.Update<UserModel>(foundUser);
             return _context.SaveChanges() != 0;
+        }
+
+        public bool GiveUserAdmin(int id)
+        {
+            bool result = false;
+            UserModel FoundUser = GetUserById(id);
+            if(FoundUser != null)
+            {
+                FoundUser.IsAdmin = !FoundUser.IsAdmin;
+                _context.Update<UserModel>(FoundUser);
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace CodeWarsReservationBackend.Models.DTO
     public class UserIdDTO
     {
         public int UserId { get; set; }
-        public string? Username { get; set; }
+        public string? CodeWarName { get; set; }
 
     }
 }

@@ -27,14 +27,22 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.CohortInfo.Where(item => item.CohortName == cohortName);
         }
-         public IEnumerable<CohortModel> GetAllArchivedCohorts()
-        {
-            return _context.CohortInfo;
-        }
+        //  public IEnumerable<CohortModel> GetAllArchivedCohorts()
+        // {
+        //     bool result = false;
+        //     UserModel FoundCohort = GetUserById(id);
+        //     if(FoundCohort != null)
+        //     {
+        //         FoundCohort.IsAdmin = !FoundCohort.IsAdmin;
+        //         _context.Update<UserModel>(FoundCohort);
+        //         result = _context.SaveChanges() != 0;
+        //     }
+        //     return _context.CohortInfo;
+        // }
 
-        public CohortModel GetCohortById(int cohortId)
+        public CohortModel GetCohortById(int id)
         {
-            return _context.CohortInfo.SingleOrDefault(item => item.CohortId == cohortId);
+            return _context.CohortInfo.SingleOrDefault(item => item.Id == id);
         }
 
         public bool UpdateCohort(CohortModel updatedCohort)
