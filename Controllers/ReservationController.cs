@@ -19,7 +19,13 @@ namespace CodeWarsReservationBackend.Controllers
         {
             _data = _dataFromService;
         }
-    
+
+        [HttpPost("AddReserveredKata")]
+        public bool AddReserveredKata(ReservationModel newReservation)
+        {
+            return _data.AddReserveredKata(newReservation);
+        }
+        
         [HttpGet("GetReservedKataByCodeWarName/{codeWarName}")]
         public IEnumerable<ReservationModel> GetReservedKataByCodeWarName(string codeWarName)
         {
