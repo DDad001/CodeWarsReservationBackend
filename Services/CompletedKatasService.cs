@@ -25,6 +25,12 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.CompletedKatasInfo.Where(item => item.CodeWarName == codewarName);
         }
+
+        public bool AddCompletedKata(CompletedKatasModel newCompletedKata)
+        {
+            _context.Add(newCompletedKata);
+            return _context.SaveChanges() !=0;
+        }
         
 
 

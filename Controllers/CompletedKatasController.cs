@@ -19,6 +19,12 @@ namespace CodeWarsReservationBackend.Controllers
             _data = _dataFromService;
         }
 
+        [HttpPost("AddCompletedKata")]
+        public bool AddCompletedKata(CompletedKatasModel newCompletedKata)
+        {
+            return _data.AddKata(newCompletedKata);
+        }
+
         [HttpGet("GetAllCompletedKatas")]
         public IEnumerable<CompletedKatasModel> GetAllCompletedKatas()
         {
