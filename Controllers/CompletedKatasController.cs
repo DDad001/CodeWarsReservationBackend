@@ -22,7 +22,7 @@ namespace CodeWarsReservationBackend.Controllers
         [HttpPost("AddCompletedKata")]
         public bool AddCompletedKata(CompletedKatasModel newCompletedKata)
         {
-            return _data.AddKata(newCompletedKata);
+            return _data.AddCompletedKata(newCompletedKata);
         }
 
         [HttpGet("GetAllCompletedKatas")]
