@@ -45,6 +45,10 @@ namespace CodeWarsReservationBackend.Services
             return _context.CohortInfo.SingleOrDefault(item => item.Id == id);
         }
 
+        public CohortModel GetCohortByCodeWarName(string codeWarName)
+        {
+            return _context.CohortInfo.SingleOrDefault(item => item.CodeWarName == codeWarName);
+        }
         public bool UpdateCohort(CohortModel updatedCohort)
         {
             _context.Update<CohortModel>(updatedCohort);
