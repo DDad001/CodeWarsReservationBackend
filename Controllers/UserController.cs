@@ -75,10 +75,9 @@ namespace CodeWarsReservationBackend.Controllers
         }
 
         [HttpGet("GetAllUsersByCohortName/{cohortName}")]
-
-        public IEnumerable<CohortModel> GetAllUsersByCohortName(string cohortName)
+        public IEnumerable<UserModel>GetAllUsersByCohortName(string cohortName)
         {
-            return _data.GetCohortByCohortName(cohortName);
+            return _data.GetAllUsersByCohortName(cohortName);
         }
     }
 }
