@@ -4,7 +4,7 @@
 
 namespace CodeWarsReservationBackend.Migrations
 {
-    public partial class init : Migration
+    public partial class tableCreated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,6 +15,7 @@ namespace CodeWarsReservationBackend.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CohortName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CodeWarName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CohortLevelOfDifficulty = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsArchived = table.Column<bool>(type: "bit", nullable: false)
@@ -30,7 +31,6 @@ namespace CodeWarsReservationBackend.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CohortId = table.Column<int>(type: "int", nullable: false),
                     CodeWarName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataSlug = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -48,7 +48,6 @@ namespace CodeWarsReservationBackend.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CohortId = table.Column<int>(type: "int", nullable: false),
                     CodeWarName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataSlug = table.Column<string>(type: "nvarchar(max)", nullable: true),

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeWarsReservationBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220323165833_needthetable")]
-    partial class needthetable
+    [Migration("20220324170740_tableCreated")]
+    partial class tableCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace CodeWarsReservationBackend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CodeWarName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CohortLevelOfDifficulty")
                         .HasColumnType("nvarchar(max)");
@@ -59,9 +62,6 @@ namespace CodeWarsReservationBackend.Migrations
                     b.Property<string>("CodeWarName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CohortId")
-                        .HasColumnType("int");
-
                     b.Property<string>("KataLanguage")
                         .HasColumnType("nvarchar(max)");
 
@@ -89,9 +89,6 @@ namespace CodeWarsReservationBackend.Migrations
 
                     b.Property<string>("CodeWarName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CohortId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");

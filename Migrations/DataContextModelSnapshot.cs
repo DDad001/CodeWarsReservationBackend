@@ -29,6 +29,9 @@ namespace CodeWarsReservationBackend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("CodeWarName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CohortLevelOfDifficulty")
                         .HasColumnType("nvarchar(max)");
 
@@ -57,9 +60,6 @@ namespace CodeWarsReservationBackend.Migrations
                     b.Property<string>("CodeWarName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CohortId")
-                        .HasColumnType("int");
-
                     b.Property<string>("KataLanguage")
                         .HasColumnType("nvarchar(max)");
 
@@ -87,9 +87,6 @@ namespace CodeWarsReservationBackend.Migrations
 
                     b.Property<string>("CodeWarName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CohortId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");

@@ -120,3 +120,8 @@
 /Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/ref/CodeWarsReservationBackend.dll
 /Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.pdb
 /Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/obj/Debug/net6.0/CodeWarsReservationBackend.genruntimeconfig.cache
+/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/bin/Debug/net6.0/publish/web.config
+/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/bin/Debug/net6.0/publish/appsettings.Development.json
+/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/bin/Debug/net6.0/publish/appsettings.json
+/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/bin/Debug/net6.0/publish/CodeWarsReservationBackend.deps.json
+/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/bin/Debug/net6.0/publish/CodeWarsReservationBackend.runtimeconfig.json
