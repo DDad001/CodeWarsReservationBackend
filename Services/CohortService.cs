@@ -40,6 +40,10 @@ namespace CodeWarsReservationBackend.Services
         //     return _context.CohortInfo;
         // }
 
+        public IEnumerable<CohortModel> GetAllCohorts()
+        {
+            return _context.CohortInfo;
+        }
         public CohortModel GetCohortById(int id)
         {
             return _context.CohortInfo.SingleOrDefault(item => item.Id == id);
