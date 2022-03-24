@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/dd227fa6-20cb-468c-b4df-6966b442fd32/resourceGroups/2022level3/providers/Microsoft.Web/sites/CodeStackKataReserveBackEnd",
+    "appService.deploySubpath": "publish"
+}
