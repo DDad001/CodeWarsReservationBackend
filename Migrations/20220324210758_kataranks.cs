@@ -4,7 +4,7 @@
 
 namespace CodeWarsReservationBackend.Migrations
 {
-    public partial class tableCreated : Migration
+    public partial class kataranks : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,7 +35,8 @@ namespace CodeWarsReservationBackend.Migrations
                     KataName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataSlug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KataLanguage = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    KataLanguage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KataRank = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -53,6 +54,7 @@ namespace CodeWarsReservationBackend.Migrations
                     KataSlug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataLanguage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    KataRank = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsCompleted = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },

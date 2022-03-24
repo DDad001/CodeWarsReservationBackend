@@ -69,6 +69,9 @@ namespace CodeWarsReservationBackend.Migrations
                     b.Property<string>("KataName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("KataRank")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("KataSlug")
                         .HasColumnType("nvarchar(max)");
 
@@ -101,6 +104,9 @@ namespace CodeWarsReservationBackend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KataName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KataRank")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KataSlug")
