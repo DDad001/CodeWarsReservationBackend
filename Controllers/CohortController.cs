@@ -52,11 +52,11 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.GetCohortByCodeWarName(codeWarName);
         }
         
-        // [HttpGet("GetAllArchivedCohorts")]
-        // public IEnumerable<CohortModel> GetAllArchivedCohorts()
-        // {
-        //     return _data.GetAllArchivedCohorts();
-        // }
+        [HttpGet("GetAllCohorts")]
+        public IEnumerable<CohortModel> GetAllCohorts()
+        {
+            return _data.GetAllCohorts();
+        }
 
         [HttpGet("GetCohortById/{id}")]
         public CohortModel GetCohortById(int id)
