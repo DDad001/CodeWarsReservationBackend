@@ -13,6 +13,7 @@ namespace CodeWarsReservationBackend.Models
         public string? KataSlug { get; set; }
         public string? KataLink { get; set; }
         public string? KataLanguage { get; set; }
+        public string? KataRank { get; set; }
 
         public CompletedKatasModel(){}
     }

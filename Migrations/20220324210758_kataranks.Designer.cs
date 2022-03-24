@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeWarsReservationBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220324170740_tableCreated")]
-    partial class tableCreated
+    [Migration("20220324210758_kataranks")]
+    partial class kataranks
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,6 +71,9 @@ namespace CodeWarsReservationBackend.Migrations
                     b.Property<string>("KataName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("KataRank")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("KataSlug")
                         .HasColumnType("nvarchar(max)");
 
@@ -103,6 +106,9 @@ namespace CodeWarsReservationBackend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KataName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KataRank")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KataSlug")
