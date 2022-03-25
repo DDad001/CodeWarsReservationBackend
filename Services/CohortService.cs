@@ -76,8 +76,22 @@ namespace CodeWarsReservationBackend.Services
         }
         public bool UpdateCohort(CohortModel updatedCohort)
         {
-            _context.Update<CohortModel>(updatedCohort);
-            return _context.SaveChanges() != 0;
+             bool result = false;
+            if (!DoesCohortExist(updatedCohort.CohortName)) {
+                // The user does exist
+                CohortModel newCohort = new CohortModel();
+                newCohort.Id = updatedCohort.Id;
+                newCohort.CodeWarName = updatedCohort.CodeWarName;
+                newCohort.CohortName = updatedCohort.CohortName;               
+                newCohort.CohortLevelOfDifficulty = updatedCohort.CohortLevelOfDifficulty;          
+                newCohort.DateCreated = updatedCohort.DateCreated;
+                newCohort.IsArchived = updatedCohort.IsArchived;
+
+                 _context.Update<CohortModel>(updatedCohort);
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
+
         }
 
         //  public bool ArchiveCohort (CohortModel CohortArchived)
