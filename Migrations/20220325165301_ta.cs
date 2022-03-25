@@ -4,7 +4,7 @@
 
 namespace CodeWarsReservationBackend.Migrations
 {
-    public partial class addedtablesagian : Migration
+    public partial class ta : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,6 @@ namespace CodeWarsReservationBackend.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CodeWarName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataSlug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KataLink = table.Column<string>(type: "nvarchar(max)", nullable: true),

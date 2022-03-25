@@ -31,11 +31,11 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.GetAllCompletedKatas();
         }
 
-        [HttpGet("GetCompletedKatasByCodeWarName/{codewarName}")]
-        public IEnumerable<CompletedKatasModel> GetCompletedKatasByCodeWarName(string codewarName)
-        {
-            return _data.GetCompletedKatasByCodeWarName(codewarName);
-        }
+        // [HttpGet("GetCompletedKatasByCodeWarName/{codewarName}")]
+        // public IEnumerable<CompletedKatasModel> GetCompletedKatasByCodeWarName(string codewarName)
+        // {
+        //     return _data.GetCompletedKatasByCodeWarName(codewarName);
+        // }
         
     }
 }

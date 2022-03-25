@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeWarsReservationBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220325035053_addedtablesagian")]
-    partial class addedtablesagian
+    [Migration("20220325165301_ta")]
+    partial class ta
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,9 +58,6 @@ namespace CodeWarsReservationBackend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CodeWarName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KataLanguage")
                         .HasColumnType("nvarchar(max)");
