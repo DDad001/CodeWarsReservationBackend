@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeWarsReservationBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220324210758_kataranks")]
-    partial class kataranks
+    [Migration("20220325035053_addedtablesagian")]
+    partial class addedtablesagian
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

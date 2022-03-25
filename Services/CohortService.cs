@@ -17,11 +17,32 @@ namespace CodeWarsReservationBackend.Services
             _context = context;
         }
         
-        public bool AddCohort (CohortModel newCohort)
+        public bool AddCohort(CohortModel CohortToAdd) 
         {
-            _context.Add(newCohort);
-            return _context.SaveChanges() != 0;
+            bool result = false;
+            if (!DoesCohortExist(CohortToAdd.CohortName)) {
+                // The user does exist
+                CohortModel newCohort = new CohortModel();
+                newCohort.Id = CohortToAdd.Id;
+                newCohort.CodeWarName = CohortToAdd.CodeWarName;
+                newCohort.CohortName = CohortToAdd.CohortName;               
+                newCohort.CohortLevelOfDifficulty = CohortToAdd.CohortLevelOfDifficulty;          
+                newCohort.DateCreated = CohortToAdd.DateCreated;
+                newCohort.IsArchived = CohortToAdd.IsArchived;
+
+                _context.Add(newCohort);  
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
         }
+
+        public bool DoesCohortExist(string? cohortName) 
+        {
+            return _context.CohortInfo.SingleOrDefault( user => user.CohortName == cohortName) != null;
+        }
+
+
+
 
         public IEnumerable<CohortModel> GetCohortByCohortName(string cohortName)
         {

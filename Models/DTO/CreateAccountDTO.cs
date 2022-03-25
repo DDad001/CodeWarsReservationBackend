@@ -9,6 +9,8 @@ namespace CodeWarsReservationBackend.Models.DTO
     {
         public int Id { get; set; } 
         public string? CodeWarName { get; set; }
+        public string? CohortName { get; set; }
         public string? Password { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

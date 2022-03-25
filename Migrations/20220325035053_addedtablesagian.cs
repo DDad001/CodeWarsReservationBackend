@@ -4,7 +4,7 @@
 
 namespace CodeWarsReservationBackend.Migrations
 {
-    public partial class kataranks : Migration
+    public partial class addedtablesagian : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
