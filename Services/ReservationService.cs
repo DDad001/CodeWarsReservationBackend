@@ -31,9 +31,9 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);
         }
-          public ReservationModel GetReservedKataByCodeWar(string codeWarName)
+          public ReservationModel GetReservedKataByCodeWar(string CodeWarName)
         {
-            return _context.ReservationInfo.SingleOrDefault(user => user.CodeWarName == codeWarName);
+            return _context.ReservationInfo.SingleOrDefault(item => item.CodeWarName == CodeWarName);
         }
 
          public bool UpdateReservedKata(ReservationModel updatedReservedKata)
