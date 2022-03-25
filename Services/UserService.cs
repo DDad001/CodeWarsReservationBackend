@@ -85,6 +85,8 @@ namespace CodeWarsReservationBackend.Services
                 var hashedPassword = HashPassword(UserToAdd.Password);
                 newUser.Id = UserToAdd.Id;
                 newUser.CodeWarName = UserToAdd.CodeWarName;
+                newUser.CohortName = UserToAdd.CohortName;
+                newUser.IsAdmin = UserToAdd.IsAdmin;
                 newUser.Salt = hashedPassword.Salt;
                 newUser.Hash = hashedPassword.Hash;
 
