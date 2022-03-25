@@ -8,7 +8,6 @@ namespace CodeWarsReservationBackend.Models
     public class CompletedKatasModel
     {
         public int Id { get; set; }
-        public string? CodeWarName { get; set; }
         public string? KataName { get; set; }
         public string? KataSlug { get; set; }
         public string? KataLink { get; set; }
