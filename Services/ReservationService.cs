@@ -31,9 +31,9 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);
         }
-          public ReservationModel GetReservedKataByCodeWar(string CodeWarName)
+          public IEnumerable<ReservationModel> GetReservedKataByKataName(string kataName)
         {
-            return _context.ReservationInfo.SingleOrDefault(item => item.CodeWarName == CodeWarName);
+            return _context.ReservationInfo.Where(item => item.KataName == kataName);
         }
 
          public bool UpdateReservedKata(ReservationModel updatedReservedKata)
@@ -42,13 +42,17 @@ namespace CodeWarsReservationBackend.Services
             return _context.SaveChanges() != 0;
         }
 
-          public bool UpdateReservation(string CodeWarName, bool IsCompleted)
+        public ReservationModel GetKataById(int id)
         {
-            ReservationModel foundUser = GetReservedKataByCodeWar(CodeWarName);
+            return _context.ReservationInfo.SingleOrDefault(item => item.Id == id);
+        }
+          public bool UpdateReservation(int id, bool IsCompleted)
+        {
+            ReservationModel foundUser = GetKataById(id);
             bool result = false;
             if(foundUser != null)
             {
-                foundUser.CodeWarName = CodeWarName;
+                foundUser.Id = id;
                 foundUser.IsCompleted = IsCompleted;
                 
 
