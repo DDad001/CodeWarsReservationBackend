@@ -32,6 +32,12 @@ namespace CodeWarsReservationBackend.Controllers
             return _data.GetReservedKataByCodeWarName(codeWarName);
         }
 
+        [HttpGet("GetReservedKataByCodeWar/{codeWarName}")]
+        public ReservationModel GetReservedKataByCodeWar(string codeWarName)
+        {
+            return _data.GetReservedKataByCodeWar(codeWarName);
+        }
+
         [HttpGet("GetAllReservedKatas")]
         public IEnumerable<ReservationModel> GetAllReservedKatas()
         {
@@ -42,6 +48,13 @@ namespace CodeWarsReservationBackend.Controllers
          public bool UpdateReservedKata(ReservationModel updateReservation)
         {
             return _data.UpdateReservedKata(updateReservation);
+        }
+
+        
+        [HttpPost("UpdateReservation/{CodeWarName}/{IsCompleted}")]
+        public bool UpdateReservation(string CodeWarName, bool IsCompleted)
+        {
+            return _data.UpdateReservation(CodeWarName, IsCompleted);
         }
 
     }

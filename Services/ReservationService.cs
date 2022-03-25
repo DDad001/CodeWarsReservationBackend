@@ -31,10 +31,31 @@ namespace CodeWarsReservationBackend.Services
         {
             return _context.ReservationInfo.Where(item => item.CodeWarName == codeWarName);
         }
+          public ReservationModel GetReservedKataByCodeWar(string codeWarName)
+        {
+            return _context.ReservationInfo.SingleOrDefault(user => user.CodeWarName == codeWarName);
+        }
+
          public bool UpdateReservedKata(ReservationModel updatedReservedKata)
         {
             _context.Update<ReservationModel>(updatedReservedKata);
             return _context.SaveChanges() != 0;
+        }
+
+          public bool UpdateReservation(string CodeWarName, bool IsCompleted)
+        {
+            ReservationModel foundUser = GetReservedKataByCodeWar(CodeWarName);
+            bool result = false;
+            if(foundUser != null)
+            {
+                foundUser.CodeWarName = CodeWarName;
+                foundUser.IsCompleted = IsCompleted;
+                
+
+                _context.Update<ReservationModel>(foundUser);
+               result =  _context.SaveChanges() != 0;
+            }
+            return result;
         }
 
     }
