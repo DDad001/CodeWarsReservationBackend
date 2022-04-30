@@ -2058,19 +2058,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/daniald/.nuget/packages/": {}
+    "/Users/scottmorenzone/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
+      "projectUniqueName": "/Users/scottmorenzone/Desktop/Codestack Academy/Level2/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
       "projectName": "CodeWarsReservationBackend",
-      "projectPath": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
-      "packagesPath": "/Users/daniald/.nuget/packages/",
-      "outputPath": "/Users/daniald/Level-2 CodeStack/CodeWarsReservationBackend/obj/",
+      "projectPath": "/Users/scottmorenzone/Desktop/Codestack Academy/Level2/CodeWarsReservationBackend/CodeWarsReservationBackend.csproj",
+      "packagesPath": "/Users/scottmorenzone/.nuget/packages/",
+      "outputPath": "/Users/scottmorenzone/Desktop/Codestack Academy/Level2/CodeWarsReservationBackend/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/daniald/.nuget/NuGet/NuGet.Config"
+        "/Users/scottmorenzone/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
